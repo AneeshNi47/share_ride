@@ -1,0 +1,1 @@
+web: gunicorn share_ride.wsgi --log-file -
