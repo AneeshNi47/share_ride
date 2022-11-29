@@ -26,7 +26,13 @@ SECRET_KEY = 'django-insecure-!mcmy3)(r*3$_$r6+6js@p#144jh_hk8e$(0*fcuk0%s&%^kld
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = [
+    "https://apartment-share-ride-ui.herokuapp.com",
+    "http://localhost:3080",
+    "http://127.0.0.1:3000",
+    "http://localhost:8080",
+    "http://127.0.0.1:8000"
+]
 
 # Application definition
 
@@ -40,7 +46,8 @@ INSTALLED_APPS = [
     'user_route',
     'rest_framework',
     'knox',
-    'accounts'
+    'accounts',
+    'corsheaders'
 ]
 
 REST_FRAMEWORK = {
@@ -50,6 +57,7 @@ REST_FRAMEWORK = {
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -75,7 +83,12 @@ TEMPLATES = [
         },
     },
 ]
-
+CORS_ORIGIN_ALLOW_ALL = False
+CORS_ORIGIN_WHITELIST = (
+    'http://localhost:3000',
+    'http://localhost:8000',
+    'https://apartment-share-ride.herokuapp.com'
+)
 WSGI_APPLICATION = 'share_ride.wsgi.application'
 
 # Database
