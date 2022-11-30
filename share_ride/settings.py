@@ -47,7 +47,8 @@ INSTALLED_APPS = [
     'rest_framework',
     'knox',
     'accounts',
-    'corsheaders'
+    'corsheaders',
+    'ride_request'
 ]
 
 REST_FRAMEWORK = {
