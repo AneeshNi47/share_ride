@@ -1,7 +1,7 @@
 from user_route.models import UserRoute
 from rest_framework import viewsets, permissions
 from .serializers import UserRouteSerializer
-from .choices import ModeOfTravel, RouteType
+from .choices import RouteType
 
 
 class UserRouteViewSet(viewsets.ModelViewSet):

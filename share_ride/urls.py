@@ -17,9 +17,12 @@ from django.contrib import admin
 from django.urls import path, include
 from user_route import urls as user_route_urls
 from accounts import urls as accounts_urls
-
+from ride_request import urls as request_urls
+from team import urls as team_urls
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include(user_route_urls)),
     path('', include(accounts_urls)),
+    path('', include(request_urls)),
+    path('', include(team_urls)),
 ]

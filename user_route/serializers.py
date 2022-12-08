@@ -7,3 +7,4 @@ class UserRouteSerializer(serializers.ModelSerializer):
     class Meta:
         model = UserRoute
         fields = '__all__'
+        depth = 1
